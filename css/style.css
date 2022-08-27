@@ -171,6 +171,7 @@ body{
 .btn-add:hover{
     cursor: pointer;
     border: none;
+    outline: none;
     background-color: #5390d9;
     width: 100%;
     color: #fff;
@@ -216,6 +217,7 @@ text-align: center;
     text-align: center;
     font-weight: bold;
     transition: all .6s;
+    width: 100%;
 
 }
 .btn-update:hover{
@@ -234,6 +236,7 @@ text-align: center;
     text-align: center;
     font-weight: bold;
     transition: all .6s;
+    width: 100%;
 
 }
 .btn-delete:hover{
@@ -241,8 +244,6 @@ text-align: center;
     color: #fff;
     cursor: pointer;
 }
-
-
 
 
 /*              ! End Table Of Products              */

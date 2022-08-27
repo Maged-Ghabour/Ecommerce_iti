@@ -31,7 +31,7 @@ btnAddProduct.addEventListener("click" , (e)=>{
 
     displayProducts()
 
-    // clearForm()
+    clearForm()
 
     console.log(productsContainer);
 })
@@ -62,8 +62,8 @@ function displayProducts(){
                 <td>${productsContainer[i].category}</td>
                 <td>${productsContainer[i].image}</td>
                 <td>${productsContainer[i].desc}</td>
-                <td><button class='btn-update'>update</button></td>
-                <td><button class='btn-delete'>delete</button></td>
+                <td><button class='btn-update' onclick=''>update</button></td>
+                <td><button class='btn-delete' onclick='deleteProduct(${i})'>delete</button></td>
             
             
             </tr>
@@ -71,6 +71,14 @@ function displayProducts(){
         
     }
     document.getElementById("productsWrapper").innerHTML = productsRows
+}
+
+
+function deleteProduct(index){
+
+    productsContainer.splice(index,1);
+    displayProducts();
+    localStorage.setItem("allProducts" , JSON.stringify(productsContainer))
 }
 
 
