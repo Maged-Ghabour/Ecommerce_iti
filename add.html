@@ -23,28 +23,37 @@
             <form action="">
                 <div class="mb-3">
                     <label for="productName">product Name:</label>
-                    <input type="text" name="productName" id="productName">
+                    <input type="text" name="productName" id="productName" autocomplete="off">
+                    <small>Product Name must be Chars only</small>
                 </div>
                 <div class="mb-3">
                     <label for="productPrice">product Price:</label>
-                    <input type="number" name="productPrice" id="productPrice">
+                    <input type="number" name="productPrice" id="productPrice" autocomplete="off">
+                    <small>Product Name must be Chars only</small>
+
                 </div>
                 <div class="mb-3">
                     <label for="productCategory">product Category:</label>
-                    <input type="text" name="productCategory" id="productCategory">
+                    <input type="text" name="productCategory" id="productCategory" autocomplete="off">
+                    <small>Product Name must be Chars only</small>
+
                 </div>
                 <div class="mb-3">
                     <label for="productImage">product Image:</label>
                     <input type="file" name="productImage" id="productImage">
+                    <small>Product Name must be Chars only</small>
+
                 </div>
 
                 <div class="mb-3">
                     <label for="productDesc">product description:</label>
-                    <textarea name="productDesc" id="productDesc" cols="30" rows="8"></textarea>
+                    <textarea name="productDesc" id="productDesc"  rows="5"></textarea>
+                    <small>Product Name must be Chars only</small>
+
                 </div>
 
                 <div class="mb-3">
-                    <button class="btn-add">Add Product</button>
+                    <button class="btn-add" id="btnAddProduct">Add Product</button>
                 </div>
                 
                 
@@ -53,5 +62,28 @@
         </div>
     </div>
 </div>
+<div class="spacer layer1">
+    <div class="products-table">
+        <div class="container">
+            <table>
+                <thead>
+                    <th>Index</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                    <th>Image</th>
+                    <th>Desc</th>
+                    <th>Update</th>
+                    <th>delete</th>
+                </thead>
+                <tbody id="productsWrapper">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="js/main.js"></script>
 </body>
 </html>
