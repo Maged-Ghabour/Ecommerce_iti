@@ -1,5 +1,4 @@
 
-
 // ! Authorization 
 /*   Authorization Page */
 let adminEmail = getCookie("email");
@@ -14,11 +13,24 @@ let adminPassword = getCookie("password");
 // ! End Authorization
 
 
+
+
+// ! Start distroy Section
+// document.getElementById("logout").addEventListener(("click" ,()=>{
+//     deleteAllCookies();
+//     location.href("login.html")
+// }))
+// ! End distroy Section
+
+
+
+
 //   ! Start Add Product Page 
 
 let productNameInput = document.getElementById("productName");
 let productPriceInput = document.getElementById("productPrice");
-let productCategories = document.getElementById("productCategories");let productImageInput = document.getElementById("productImage");
+let productCategories = document.getElementById("productCategories");
+let productImageInput = document.getElementById("productImage");
 let productDescInput = document.getElementById("productDesc");
 let btnAddProduct = document.getElementById("btnAddProduct");
 
@@ -26,9 +38,6 @@ let search_bar = document.getElementById("search");
 
 var toggole = false; 
 var globalindex = 0;
-
-
-
 
 
 
@@ -48,7 +57,7 @@ function init ()
 {
     if (!toggole)
         {
-            add();
+            addProduct();
             displayProducts();
         }
     else 
@@ -76,7 +85,8 @@ search_bar.onkeyup = function()
                     <td>${productsContainer[i].name}</td>
                     <td>${productsContainer[i].price}</td>
                     <td>${productsContainer[i].category}</td>
-                    <td><img  width="100%" height="100%"  src="${productsContainer[i].image}"></td>                    <td>${productsContainer[i].description}</td>
+                    <td><img  width="100%" height="100%"  src="${productsContainer[i].image}"></td>
+                    <td>${productsContainer[i].description}</td>
                     <td>
                         <button class="btn-update" id="btn-delete" onclick="retrive(${i})">Edit</button>
                         <button class='btn-delete' onclick='deletefun(${i})'>delete</button>
@@ -91,21 +101,7 @@ search_bar.onkeyup = function()
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-btnAddProduct.addEventListener("click" , (e)=>{
+btnAddProduct.addEventListener("click" , function addProduct(e) {
 
     e.preventDefault()
 
@@ -114,9 +110,6 @@ btnAddProduct.addEventListener("click" , (e)=>{
 
     // ! Start Validation 
     if(validateForm() == true){
-
-
-
    
     // ! End Validation 
     
@@ -125,32 +118,14 @@ btnAddProduct.addEventListener("click" , (e)=>{
 
 
     let product = {
+        id   : new Date().valueOf(),
         name : productNameInput.value,
         price : productPriceInput.value,
         category:productCategories.value,
-        // image :productImageInput.value,
+        image :productImageInput.value,
         desc : productDescInput.value
 
     }
-
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
         productsContainer.push(product)
 
@@ -166,7 +141,7 @@ btnAddProduct.addEventListener("click" , (e)=>{
     
  
 
- 
+
 })
 
 
@@ -203,28 +178,33 @@ function clearForm(){
 
 
 function displayProducts(){
+
+    
     let productsRows = ``
 
     for (let i = 0; i <  productsContainer.length; i++) {
 
-
+        console.log(productsContainer[i].image.replace("C:\\fakepath\\" , "imgs/"));
 
 
   
-    productImageInput.addEventListener("change" , function(){
+    // productImageInput.addEventListener("change" , function(){
 
-         // ! Store Image in Local Storage 
+    //       ! Store Image in Local Storage 
     
-        const reader = new FileReader();
-        reader.addEventListener("load" , function(){
+    //     const reader = new FileReader();
+    //     reader.addEventListener("load" , function(){
          
         
-            productsContainer[i].image =  reader.result
+    //         productsContainer[i].image =  reader.result
+
+    //         console.log(productsContainer[i].image);
+           
 
             
-        })
-         reader.readAsDataURL(this.files[0]);
-    });
+    //     })
+    //      reader.readAsDataURL(this.files[0]);
+    // });
 
     
 
@@ -236,9 +216,9 @@ function displayProducts(){
                 <td>${productsContainer[i].name}</td>
                 <td>${productsContainer[i].price}</td>
                 <td>${productsContainer[i].category}</td>
-                <td><img  width="100%" height="100%"  src="${productsContainer[i].image}"></td>
+                <td><img  width="100%" height="100%"  src="${productsContainer[i].image.replace("C:\\fakepath\\" , "imgs/")}"></td>
                 <td>${productsContainer[i].desc}</td>
-                <td><button class='btn-update' onclick=''><i class="fa-solid fa-pen-to-square fa-xl"></i><button class='btn-delete' onclick='deleteProduct(${i})'><i class="fa-solid fa-trash fa-xl"></i></button></button></td>
+                <td><button class='btn-update' onclick='retrive(${i})'><i class="fa-solid fa-pen-to-square fa-xl"></i><button class='btn-delete' onclick='deleteProduct(${i})'><i class="fa-solid fa-trash fa-xl"></i></button></button></td>
               
             
             
@@ -247,6 +227,7 @@ function displayProducts(){
         
     }
     document.getElementById("productsWrapper").innerHTML = productsRows
+   
 }
 
 
@@ -261,17 +242,12 @@ function deleteProduct(index){
 
 function retrive(id)
 {
-    productImageInput.value = productsContainer[id].name; 
+    productNameInput.value = productsContainer[id].name; 
     productPriceInput.value = productsContainer[id].price; 
     productCategories.value = productsContainer[id].category; 
-    productDescInput.value = productsContainer[id].description;
-    
-    
-    
+    productDescInput.value = productsContainer[id].desc;
     toggole = true; 
     globalindex = id; 
-
-
     btnAddProduct.innerHTML="Update Product";
 }
 
@@ -338,3 +314,4 @@ function validateForm() {
 
     return true;
  }
+

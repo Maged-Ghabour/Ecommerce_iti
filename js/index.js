@@ -18,8 +18,6 @@ if(localStorage.getItem("allProducts") != null){
 
 
 
-
-
 function displayProducts(){
     let productsRows = ``
 
@@ -30,15 +28,17 @@ function displayProducts(){
         
             <div class="card">
                 
-             <img src="${productsContainer[i].image}" alt="Avatar" style="width:100%"> 
+             <img src="${productsContainer[i].image.replace("C:\\fakepath\\" , "imgs/")}" alt="Avatar" style="width:100%"> 
              <h4><b>${productsContainer[i].name}</b></h4>
              <p>${productsContainer[i].category}</p>
+             <p>${productsContainer[i].price}</p>
+             
              
               
             </div>
         `
         
     }
-    document.getElementById("card-wrapper").innerHTML = productsRows
+    document.getElementById("product").innerHTML = productsRows
 }
 

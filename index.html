@@ -1,49 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Store Shop</title>
-  <link rel="stylesheet" href="css/index.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+<h<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Ecommerce</title>
 </head>
-
 <body>
-  <div class="navbar">
-    <a href="index.html">
-      <h2>Store Shop</h2>
-    </a>
+    <div class="container">
+        <div class="Nav">
+            <div class="logo">Ecommerce</div>
+            <div class="search"><input type="text" value="search"><i class="fa-solid fa-magnifying-glass"></i></div>
+            <div class="list">
+                <div><a href="#">HOME</a></div>
+                <div><a href="#product">SHOP</a></div>
+                <div><a href="#">ABOUT</a></div>
+                <div><a href="Contact.html">CONTACT</a></div>
+            </div>
+        </div>
+        <div class="header">
+            <div class="shoptogether">
+            <div>
+                <a>Shop Together</a>
+            </div>
+            <div>
+                <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio esse, officia illo nemo facere cupiditate incidunt? Temporibus est, error iure ad vitae officia magni aliquid, saepe et quos hic nobis.
+                </p>
+            </div>
+                <div class="btn"> 
+                  <input  type="button" value="VIEW MORE">
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="sec1">
+                <div class="needs">
+                <p class="p1">Explore your needs...</p>
+                <p class="p2"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus ipsa deserunt omnis nemo, ipsum consequatur similique accusamus totam repellendus eius aliquam aspernatur expedita illum saepe eveniet commodi explicabo veniam rem. </p>
+               </div>
+            </div>
+            <div class="category">
+               <div class="card">
+                 <div class="img"><img width="100%" height="50%" src="imgs/300.jpg">
 
-    <a href="cart.html">
-      <div class="cart">
-        <i class="bi bi-cart2"></i>
-        <div id="cartAmount" class="cartAmount">0</div>
-      </div>
-    </a>
 
-    <a href="login.html">
-    <div class="login">
-      <button id="login">Login</button>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat 
+                     repellendus recusandae et aperiam vero quia harum debitis perspiciatis quasi, </p>
+
+
+                    <input type="button"value="ACCESSORIES">
+                </div>
+               </div>
+               <div class="card">
+                 <div class="img"><img width="100%" height="50%" src="imgs/300.jpg">
+
+
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat 
+                     repellendus recusandae et aperiam vero quia harum debitis perspiciatis quasi, </p>
+
+
+                    <input type="button"value="ACCESSORIES">
+                </div>
+               </div>
+               <div class="card">
+                <div class="img"><img width="100%" height="50%" src="imgs/300.jpg">
+
+
+                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat 
+                    repellendus recusandae et aperiam vero quia harum debitis perspiciatis quasi, </p>
+
+
+                   <input type="button"value="ACCESSORIES">
+               </div>
+              </div>
+            </div>
+            <div class="hederOfbroduct">
+                <p class="p1">Explore your needs products...</p>
+                <p class="p2"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus ipsa deserunt omnis nemo, ipsum consequatur similique accusamus totam repellendus eius aliquam aspernatur expedita illum saepe eveniet commodi explicabo veniam rem. </p>
+               </div>
+            <div id="product">
+                <div class="cards">
+                  </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="MailTO">
+             <form>
+                 <div>
+                     <p><lable>Your E-Mail :</lable></p>
+                     <input type="text" value="Your email address">
+                 </div>
+                 <div >
+                    <input class="btn" type="button" value="SUBMIT" onclick=" ">
+                 </div>
+                </form>
+            </div>
+            <div class="con">
+             <div>
+                 <p>Adsress</p>
+                 <p>3721 Single Street
+                     Quincy, MA 02169</p>
+                </div>
+                <div>
+                 <p>CONTACTS</p>
+                 <p>123 456 7890
+                     info@tixly.com</p>
+                </div>
+            </div>
+         </div>
     </div>
-    </a>
-
-  </div>
 
 
-  
-  <div class="container">
-    <div class="card-wrapper" id="card-wrapper">
-      
-   
-    
-    </div>
-  </div>
-
-
-
-  <script src="js/cookies.js"></script>
-  <script src="js/home.js"></script>
+    <script src="js/index.js"></script>
 </body>
 </html>

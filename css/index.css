@@ -1,88 +1,211 @@
-/**
-* ! Changing default styles of the browser
-**/
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{
+    box-sizing: border-box;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 25px;
+    margin: 0;
 }
-
-body {
-  font-family: sans-serif;
+.container{
+    width: 85%;
+    margin: auto;
 }
-
-i {
-  cursor: pointer;
-}
-
-a {
-  text-decoration: none;
-  color: white;
-}
-
-/**
-* ! Navbar STyles are here
-**/
-
-.navbar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  background-color: #212529;
-  color: white;
-  padding: 15px 60px;
-  margin-bottom: 30px;
-}
-
-.cart {
-  position: relative;
-  background-color: #fff;
-  color: #212529;
-  font-size: 30px;
-  padding: 5px;
-  border-radius: 4px;
-}
-
-.cartAmount {
-  position: absolute;
-  top: -15px;
-  right: -10px;
-  font-size: 16px;
-  background-color: red;
-  color: white;
-  padding: 3px;
-  border-radius: 3px;
-}
-
-
-
-
-/* ! Start Cards */
-.card-wrapper{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-
+.Nav{
+    display: flex;
+    justify-content: space-between ;
+    flex-wrap: wrap;
 
 }
-.card {
-  /* Add shadows to create the "card" effect */
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  min-width: calc(95% / 4);
-  height: 100%;
-  margin: 5px;
-  padding: 10px;
+.logo{
+     width: 20%;
+    height: 100px;
+    line-height: 50px;
+    padding-top: 25px;
+    padding-left: 20px;
+}
+.list{
+ width: 40%;
+ display: flex;
+justify-content: space-around;
+}
+.list div {
+    width:35%;
+    text-align: center;
+    line-height: 50px;
+    padding-top: 25px;
+    text-decoration: none;
+}
+.list a{
+    text-decoration: none;
+}
+.list :hover a{
+
+    color: cornflowerblue;
+    border-bottom: 2px solid black ;
+}
+.search{
+    width: 35%;
+    height: 100px;
+    line-height: 50px;
+    padding-top: 25px;
+    padding-left: 20px;
+}
+.search input{
+    width: 90%;
+}
+.header{
+    width: 100%;
+    min-height: 600px;
+    background-image: url("2.jpg");
+    background-repeat: no-repeat;
+    background:cover;
+    background-position: center;
+    background-origin: content-box;
+    box-sizing: border-box;
+    background-color: aquamarine;
+}
+.shoptogether{
+    width:50%;
+    height: 600px;
+    color:aliceblue; 
+    padding-top: 150px;
+    padding-left: 50px;
+    color: black;
+}
+.shoptogether div{
+    margin-bottom:50px ;
+}
+.shoptogether div a{
+    font-size: 60px;
+    font-family: sans-serif;
+}
+.shoptogether div p{
+
+    font-family: sans-serif;
+    line-height: 35px;
+}
+.shoptogether div input{
+    font-family: sans-serif;
+    color:white;
+    background-color: black;
+    width: 200px;
+    height: 70px;
+}
+.btn{
+    width:200px;
+}
+.shoptogether :hover input{
+    background-color: rgb(0, 0, 0,.6);
+}
+.sec1 .needs p{
+    width: 70%;
+    text-align: center;
+    margin: 20px;
+    font-family: sans-serif;
+   
+}
+.p1{
+    font-size: 70px;
+}
+.p2{
+    font-size: 25px;
+}
+.sec1{
+    padding-left: 20%;
+    margin-top: 100px;
+}
+.card{
+    width: 30%;
+    height: 600px;
+    border: 2px solid black;
+       margin-top: 100px;
+}
+.img{
+    width: 100%;
+    height: 596px;
+    background-color: rgb(219, 223, 222);
+ 
+}
+.img p{
+ padding-left: 25px ;
+ margin-top: 25px;
+}
+.img input{
+ margin-left: 34px ;
+ margin-top: 50px;
+ width: 80%;
+ height: 110px;
+ background-color: black;
+ color: white;
+}
+.hederOfbroduct{
+    margin: 200px;
+}
+.category{
+    width: 100%;
+    padding-left: 60px ;
+    display: flex;
+    justify-content: space-around;
+}
+#product{
+    width: 100%;
+    /* margin-top: 60px ; */
+    display: flex;
+    margin-top: -180px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.cards{
+    width: 30%;
+    min-height:600px;
+    background-color: aliceblue;
+    margin-top: 60px ; 
+}
+.cards p{
+    font-size: larger;
+    font-family:  sans-serif;
+    padding-top: 20px;
+    height: 100px ;
+}
+.cards .span1 p{
+    font-size: small;
+    font-family:  sans-serif;
+    padding-top: 20px;
+    height: 100px ;
+}
+.cards .span2 p{
+    font-size: small;
+    font-family:  sans-serif;
+    padding-top: 20px;
+    height: 100px ;
+}
+.cards input {
+    width :100%;
+    height: 50px;
+   margin-top: 100px;
 }
 
-/* On mouse-over, add a deeper shadow */
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
 
-/* Add some padding inside the card container */
-.container {
-  padding: 2px 16px;
+.footer{
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    color: azure;
+    margin-top: 100px;
 }
-/* ! End Cards */
+.MailTO{
+    width: 50%;
+    padding: 30px;
+}
+.MailTO div {
+    width: 100%;
+    padding: 30px;
+}
+.MailTO div input{
+    width: 100%;
+    height: 60px;
+}
+.con{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 80px;
+}
