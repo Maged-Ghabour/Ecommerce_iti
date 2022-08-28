@@ -196,6 +196,27 @@ body{
 }
 
 
+
+
+.add-form small{
+    color: #ef233c;
+    font-weight: bold;
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*              ! Start Table Of Products              */
 
 table{
@@ -249,6 +270,25 @@ text-align: center;
     color: #fff;
     cursor: pointer;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*              ! End Table Of Products              */

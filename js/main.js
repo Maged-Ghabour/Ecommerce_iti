@@ -112,6 +112,14 @@ btnAddProduct.addEventListener("click" , (e)=>{
 
 
 
+    // ! Start Validation 
+    if(validateForm() == true){
+
+
+
+   
+    // ! End Validation 
+    
 
 
 
@@ -126,16 +134,37 @@ btnAddProduct.addEventListener("click" , (e)=>{
     }
 
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+        productsContainer.push(product)
+
+        localStorage.setItem("allProducts" , JSON.stringify(productsContainer))
+    
+        displayProducts()
+        showCats()
+    
+        clearForm()
+
+}   
 
     
-    productsContainer.push(product)
-
-    localStorage.setItem("allProducts" , JSON.stringify(productsContainer))
-
-    displayProducts()
-    showCats()
-
-    clearForm()
+ 
 
  
 })
@@ -180,14 +209,19 @@ function displayProducts(){
 
 
 
+
+  
     productImageInput.addEventListener("change" , function(){
-       
+
+         // ! Store Image in Local Storage 
     
         const reader = new FileReader();
         reader.addEventListener("load" , function(){
          
         
             productsContainer[i].image =  reader.result
+
+            
         })
          reader.readAsDataURL(this.files[0]);
     });
@@ -262,3 +296,45 @@ function updatefun()
 
 
 
+function validateForm() {
+
+  
+    let charsOnly = /^[a-z A-Z\u0621-\u064A0]*$/; // Alow To write Arabic Letters
+    let numbersOnly = /^\d+$/; // Alow To write Arabic Letters
+
+    if (productNameInput.value == "" || !productNameInput.value.match(charsOnly)) {
+        document.querySelector(".validateProductName").style.display = "block"
+        productNameInput.focus() ;
+        return false;
+    }else{
+        document.querySelector(".validateProductName").style.display = "none"
+    }
+  
+
+    if ((productPriceInput.value == "" )) {
+        document.querySelector(".validateProductPrice").style.display = "block"
+        productPriceInput.focus() ;
+        return false;
+    }else{
+        document.querySelector(".validateProductPrice").style.display = "none"
+    }
+    if ((productCategories.value == "" )) {
+        document.querySelector(".validateProductCats").style.display = "block"
+        productPriceInput.focus() ;
+        return false;
+    }else{
+        document.querySelector(".validateProductCats").style.display = "none"
+    }
+
+    if ((productDescInput.value == "" )) {
+        document.querySelector(".validateProductDesc").style.display = "block"
+        productPriceInput.focus() ;
+        return false;
+    }else{
+        document.querySelector(".validateProductDesc").style.display = "none"
+    }
+    
+    
+
+    return true;
+ }
