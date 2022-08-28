@@ -114,7 +114,8 @@ body{
    
 }
 
-.add-form input
+.add-form input,
+.add-form #productCategories
 {
     width: 100%;
     height: 40px;
@@ -123,7 +124,8 @@ body{
     font-size: 16px;
     border: 1px solid #ddd;
 }
-.add-form input:focus{
+.add-form input:focus,
+.add-form #productCategories{
     outline:1px solid #9a8c98 ;
    
 }
@@ -209,15 +211,17 @@ text-align: center;
 
 .btn-update{
     border: 1px solid #5390d9;
-    color: #5390d9;
+    background-color: transparent;
+    color:  #5390d9;
     font-weight: bold;
-    background-color:Transparent;
     padding: 7px 10px;
     border-radius: 4px;
     text-align: center;
     font-weight: bold;
-    transition: all .6s;
-    width: 100%;
+    transition: all .2s;
+    margin: 0 2px;
+    
+    
 
 }
 .btn-update:hover{
@@ -228,15 +232,16 @@ text-align: center;
 
 .btn-delete{
     border: 1px solid #ef233c;
+    background-color:transparent;
     color: #ef233c;
     font-weight: bold;
-    background-color:Transparent;
     padding: 7px 10px;
     border-radius: 4px;
     text-align: center;
     font-weight: bold;
-    transition: all .6s;
-    width: 100%;
+    transition: all .2s;
+    margin: 0 2px;
+  
 
 }
 .btn-delete:hover{
@@ -261,3 +266,17 @@ text-align: center;
 /* 
     ! End Add Page 
 */
+
+
+
+
+/* ! Start Add Category Page */
+.validateCategoryName{
+    display: none;
+    color: #ef233c;
+    font-weight: bold;
+    font-size: 15px;
+}
+/* ! End Add Category Page */
+
+

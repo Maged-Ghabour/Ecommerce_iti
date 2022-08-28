@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/login.css" />
+
+  </head>
+  <body>
+   
+    <div class="form-control">
+        
+        <small id="auth">You Are Not Authorized ...! 😲 </small>
+        <div class="input-field">
+            <input type="email" placeholder="Enter your email" id="email" />
+            <small id="validUserName">Enter Valid Email</small>
+          </div>
+      
+          <div class="input-field">
+              <input type="password" placeholder="Enter your password" id="password" />
+              <small id="validPassword">Should have 1 lowercase letter, 1 uppercase letter, 1 number, and be at least 8 characters long</small>
+              
+          </div>
+          <button class="btn-update" id="login" >Login</button>
+
+    </div>
+
+    <script src="js/cookies.js"></script>
+
+    <!-- JavaScript -->
+    <script>
+
+      
+
+      const email = document.querySelector("input[type='email']"),
+            password = document.querySelector("input[type='password']")
+
+          
+            email.addEventListener("keyup", () =>{
+              let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+        
+              if(!email.value.match(pattern)){
+                 document.querySelector('#validUserName').style.display = "block"
+              }else{
+                document.querySelector('#validUserName').style.display = "none"
+              }
+              
+            })
+            password.addEventListener("keyup", () =>{
+              let pattern = /(?=(.*[0-9]))((?=.*[A-Za-z0-9])(?=.*[A-Z])(?=.*[a-z]))^.{8,}$/;
+
+        
+              if(!password.value.match(pattern)){
+                 document.querySelector('#validPassword').style.display = "block"
+              }else{
+                document.querySelector('#validPassword').style.display = "none"
+              }
+              
+            })
+
+
+
+
+        
+
+    document.getElementById("login").addEventListener("click" , ()=>{
+
+        /* I set Cookie in code Not manual 
+        *  Because me be user Delete This cookie manual 
+         */
+        setCookie("email" , "iti@yahoo.com" , 1)
+        setCookie("password" , "Iti01234" , 1)
+
+
+
+
+
+    let adminEmail = getCookie("email");
+    let adminPassword = getCookie("password");
+
+
+        if (email.value ==  adminEmail && password.value == adminPassword ) {
+            location.href = "add.html"
+        }else{
+            document.querySelector('#auth').style.display = "block"
+           setTimeout(()=>{
+            location.href = "login.html"
+           },1000)
+        }
+    })
+
+
+            
+    </script>
+
+   
+  </body>
+</html>

@@ -34,7 +34,10 @@
                 </div>
                 <div class="mb-3">
                     <label for="productCategory">product Category:</label>
-                    <input type="text" name="productCategory" id="productCategory" autocomplete="off">
+                    <!-- <input type="text" name="productCategory" id="productCategory" autocomplete="off"> -->
+                    <select name="productCategory" id="productCategories">
+                     <option disabled>Select Category :</option>
+                    </select>
                     <small>Product Name must be Chars only</small>
 
                 </div>
@@ -53,7 +56,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <button class="btn-add" id="btnAddProduct">Add Product</button>
+                    <button class="btn-add" id="btnAddProduct" onclick="init()">Add Product</button>
                 </div>
                 
                 
@@ -64,17 +67,21 @@
 </div>
 <div class="spacer layer1">
     <div class="products-table">
-        <div class="container">
+        <div class="container add-form">
+            <div class="mb-3">
+                <label for="search">Search Products</label>
+                <input class="search" placeholder="search" id="search" />
+            </div>
+
             <table>
                 <thead>
-                    <th>Index</th>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Category</th>
-                    <th>Image</th>
-                    <th>Desc</th>
-                    <th>Update</th>
-                    <th>delete</th>
+                    <th style="width:5%;">Index</th>
+                    <th style="width:15%;">Name</th>
+                    <th style="width:10%;">Price</th>
+                    <th style="width:15%;">Category</th>
+                    <th style="width:10%;">Image</th>
+                    <th style="width:30%;">Desc</th>
+                    <th style="width:15%;">Actions</th>
                 </thead>
                 <tbody id="productsWrapper">
 
@@ -84,6 +91,9 @@
     </div>
 </div>
 
+
+
+<script src="js/cookies.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
