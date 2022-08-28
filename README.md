@@ -25,3 +25,9 @@ https://maged-ghabour.github.io/Ecommerce_iti/
 
 
 ### Cart
+
+
+
+## Questions 
+ - [ ] `Done`   Cookie  لل   hasing  هل ممكن اني اعمل   
+- [ ] 
