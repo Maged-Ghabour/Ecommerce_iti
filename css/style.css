@@ -97,6 +97,17 @@ body{
     ! Start Add Page 
 */
 
+.navbar .addCategory{
+    text-decoration: none;
+    display: inline-block;
+    color: #fff; 
+    margin: 0 40px;
+    transition: all 0.3s;
+}
+.navbar .addCategory:hover{
+    color: #5390d9; 
+
+}
 .add-form{
     padding: 15px 30px;
  
@@ -249,6 +260,10 @@ text-align: center;
     background-color: #5390d9;
     color: #fff;
     cursor: pointer;
+}
+
+.navbar .links{
+text-align: right;
 }
 
 .btn-delete{

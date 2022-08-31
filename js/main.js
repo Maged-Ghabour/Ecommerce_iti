@@ -16,10 +16,10 @@ let adminPassword = getCookie("password");
 
 
 // ! Start distroy Section
-// document.getElementById("logout").addEventListener(("click" ,()=>{
-//     deleteAllCookies();
-//     location.href("login.html")
-// }))
+document.getElementById("logout").addEventListener("click" ,()=>{
+    location.href = "login.html"
+    deleteAllCookies();
+})
 // ! End distroy Section
 
 
@@ -67,7 +67,6 @@ function init ()
         }
     
     toggole = false; 
-    clearForm();
 }
 
 
@@ -85,7 +84,7 @@ search_bar.onkeyup = function()
                     <td>${productsContainer[i].name}</td>
                     <td>${productsContainer[i].price}</td>
                     <td>${productsContainer[i].category}</td>
-                    <td><img  width="100%" height="100%"  src="${productsContainer[i].image}"></td>
+                    <td><img  width="100%" height="100%"  src="${productsContainer[i].image.replace("C:\\fakepath\\" , "imgs/")}"></td>
                     <td>${productsContainer[i].description}</td>
                     <td>
                         <button class="btn-update" id="btn-delete" onclick="retrive(${i})">Edit</button>
@@ -100,46 +99,47 @@ search_bar.onkeyup = function()
 
 
 
+function addProduct(){
 
-btnAddProduct.addEventListener("click" , function addProduct(e) {
-
-    e.preventDefault()
-
-
+   
 
 
     // ! Start Validation 
     if(validateForm() == true){
    
-    // ! End Validation 
+        // ! End Validation 
+        
     
-
-
-
-
-    let product = {
-        id   : new Date().valueOf(),
-        name : productNameInput.value,
-        price : productPriceInput.value,
-        category:productCategories.value,
-        image :productImageInput.value,
-        desc : productDescInput.value
-
-    }
-
-        productsContainer.push(product)
-
-        localStorage.setItem("allProducts" , JSON.stringify(productsContainer))
     
-        displayProducts()
-        showCats()
     
-        clearForm()
-
-}   
-
     
- 
+        let product = {
+            id   : new Date().valueOf(),
+            name : productNameInput.value,
+            price : productPriceInput.value,
+            category:productCategories.value,
+            image :productImageInput.value,
+            desc : productDescInput.value
+    
+        }
+    
+            productsContainer.push(product)
+    
+            localStorage.setItem("allProducts" , JSON.stringify(productsContainer))
+        
+            displayProducts()
+            // showCats()
+        
+            clearForm()
+    
+    }   
+}
+
+
+
+btnAddProduct.addEventListener("click" , function addProduct(e) {
+
+    e.preventDefault()
 
 
 })
@@ -245,6 +245,7 @@ function retrive(id)
     productNameInput.value = productsContainer[id].name; 
     productPriceInput.value = productsContainer[id].price; 
     productCategories.value = productsContainer[id].category; 
+    // productImageInput.value = productsContainer[id].image; 
     productDescInput.value = productsContainer[id].desc;
     toggole = true; 
     globalindex = id; 
@@ -253,10 +254,11 @@ function retrive(id)
 
 function updatefun()
 {
-    productsContainer[globalindex].name = productImageInput.value; 
+    productsContainer[globalindex].name = productNameInput.value; 
     productsContainer[globalindex].price = productPriceInput.value;
     productsContainer[globalindex].category = productCategories.value; 
-    productsContainer[globalindex].description = productDescInput.value;
+    // productsContainer[globalindex].image = productImageInput.value; 
+    productsContainer[globalindex].desc = productDescInput.value;
     localStorage.setItem("productsContainer" , JSON.stringify(productsContainer));
     displayProducts(); 
 }

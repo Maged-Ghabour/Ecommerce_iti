@@ -1,8 +1,11 @@
 *{
     box-sizing: border-box;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 25px;
     margin: 0;
+}
+
+body{
+    font-family: "cairo";
 }
 .container{
     width: 85%;
@@ -116,7 +119,7 @@ justify-content: space-around;
     width: 30%;
     height: 600px;
     border: 2px solid black;
-       margin-top: 100px;
+    margin-top: 100px;
 }
 .img{
     width: 100%;
@@ -147,40 +150,35 @@ justify-content: space-around;
 }
 #product{
     width: 100%;
-    /* margin-top: 60px ; */
     display: flex;
     margin-top: -180px;
-    justify-content: space-around;
+    justify-content:space-between;
     flex-wrap: wrap;
 }
 .cards{
-    width: 30%;
-    min-height:600px;
+    width: 23%;
+    min-height:200px;
     background-color: aliceblue;
     margin-top: 60px ; 
+    border-radius: 50px;
+    text-align: center;
+   
+   
 }
 .cards p{
-    font-size: larger;
-    font-family:  sans-serif;
-    padding-top: 20px;
-    height: 100px ;
+    font-size: .8rem;
+
 }
-.cards .span1 p{
-    font-size: small;
-    font-family:  sans-serif;
-    padding-top: 20px;
-    height: 100px ;
-}
-.cards .span2 p{
-    font-size: small;
-    font-family:  sans-serif;
-    padding-top: 20px;
-    height: 100px ;
-}
+ 
+
 .cards input {
     width :100%;
     height: 50px;
-   margin-top: 100px;
+   margin-top: 10px;
+   background-color: black;
+   color: white;
+   border-radius: 5px;
+
 }
 
 
@@ -208,4 +206,19 @@ justify-content: space-around;
     display: flex;
     justify-content: space-between;
     margin: 80px;
+}
+
+
+.categories#showCategories ul{
+   
+    margin: 0 auto;
+    list-style-type: none;
+    display: inline-block;
+}
+.categories#showCategories ul a{
+    text-decoration: none;
+    color: #540b0e;
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px;
 }
