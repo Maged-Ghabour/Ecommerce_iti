@@ -185,8 +185,6 @@ function displayProducts(){
     for (let i = 0; i <  productsContainer.length; i++) {
 
         console.log(productsContainer[i].image.replace("C:\\fakepath\\" , "imgs/"));
-
-
   
     // productImageInput.addEventListener("change" , function(){
 
@@ -259,8 +257,9 @@ function updatefun()
     productsContainer[globalindex].category = productCategories.value; 
     // productsContainer[globalindex].image = productImageInput.value; 
     productsContainer[globalindex].desc = productDescInput.value;
-    localStorage.setItem("productsContainer" , JSON.stringify(productsContainer));
+    localStorage.setItem("allProducts" , JSON.stringify(productsContainer));
     displayProducts(); 
+    clearForm();
 }
 
 
