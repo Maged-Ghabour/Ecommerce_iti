@@ -1,13 +1,12 @@
 
 let productsContainer = [];
 
-<<<<<<< HEAD
+
 // ! retrive Cart from localStorage 
 let basket = JSON.parse(localStorage.getItem("cartData")) || []
 
 
-=======
->>>>>>> c152765447a2ad2d84528333079af854c1d357e0
+
 if(localStorage.getItem("allProducts") != null){
     productsContainer = JSON.parse(localStorage.getItem("allProducts"))
     displayProducts()
@@ -19,32 +18,30 @@ function displayProducts(){
 
     let productsRows = ``
 
-<<<<<<< HEAD
+
     for (let i = 0; i <  productsContainer.length; i++) {
 
         let id = productsContainer[i].id
-=======
+
     for (let i = 0; i <  productsContainer.length; i++) 
     {
->>>>>>> c152765447a2ad2d84528333079af854c1d357e0
+
 
         let search = basket.find((x)=> x.id === id) || []
 
         console.log(search);
         
         productsRows += `
-<<<<<<< HEAD
+
         
             <div class="cards" id="product-id-${productsContainer[i].id}">
                 
-=======
             <div class="cards ${productsContainer[i].category} ">
->>>>>>> c152765447a2ad2d84528333079af854c1d357e0
+
              <img src="${productsContainer[i].image.replace("C:\\fakepath\\" , "imgs/")}" alt="Avatar" style="width:100% ;border-radius:5% 5% 0 0"> 
              <h4>${productsContainer[i].name}</h4>
              <p>${productsContainer[i].category}</p>
              <small> ${productsContainer[i].price} $</small>
-<<<<<<< HEAD
           
              <button type="button"> 
                     <div class="footer-cart">
@@ -58,10 +55,8 @@ function displayProducts(){
             </div>
         `
         
-=======
-             <input type="button" value="Add To Card">
-            </div>`
->>>>>>> c152765447a2ad2d84528333079af854c1d357e0
+
+          
     }
     document.getElementById("product").innerHTML = productsRows
 }
@@ -88,7 +83,7 @@ displayCats()
 
 
 
-<<<<<<< HEAD
+
 /**
  *  ! Start Add To Cart 
  **/
@@ -170,7 +165,6 @@ displayCats()
 /**
  *  ! End Add To Cart 
  **/
-=======
 
 // Start Filtering The Products Categroy
 let allCats = document.querySelectorAll('#cats li')
@@ -191,4 +185,4 @@ function showRelated()
         ele.style.display = 'block'
     })
 }
->>>>>>> c152765447a2ad2d84528333079af854c1d357e0
+}
