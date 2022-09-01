@@ -9,19 +9,19 @@ https://maged-ghabour.github.io/Ecommerce_iti/
 - [x] `Done`      Add Product  
 - [x] `Done`      Delete Product
 - [x] `Done`      Add Categories in localStorage and Put it in Select
-- [ ] `Done`      Edit Product
-- [ ] `Done`      Search to Product
-- [ ] `Done`      show All users
+- [x] `Done`      Edit Product
+- [x] `Done`      Search to Product
+- [x] `Done`      show All users
 
 ### User
 
-- [ ] `Done`  Show All Product
+- [x] `Done`  Show All Product
 - [ ] `Done`  Add Product To Cart
 - [ ] `Done`  delete product from cart
 - [ ] `Done`  delete All products from cart
 - [x] `Done`  login
 - [ ] `Done`  Register
-- [ ] `Done`  Logout
+- [x] `Done`  Logout
 
 
 ### Cart
