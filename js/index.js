@@ -152,9 +152,16 @@ displayCats()
         let cartAmount = document.getElementById("cart-amount")
         
        
-    
-        cartAmount.innerHTML = basket.map((x)=>x.item).reduce((x,y)=>x+y);
+       
+        if(basket.length == 0){
+            cartAmount.innerHTM = 0
+        }else{
+
+            cartAmount.innerHTML = basket.map((x)=>x.item).reduce((x,y)=>x+y);
+        }
     }
+
+    calc()
 
 
 
