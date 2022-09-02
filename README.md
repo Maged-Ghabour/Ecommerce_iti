@@ -34,6 +34,17 @@ https://maged-ghabour.github.io/Ecommerce_iti/
 - [x] `Done`  Sweet Alert
 
 
+## What's Next 
+- [] `Done`  product Cards design 
+- [] `Done`  Cart page Design 
+- [] `Done`  Registration 
+- []
+- []
+- []
+- []
+- []
+
+
 ## Questions 
  - [ ] `Done`   Cookie  لل   hasing  هل ممكن اني اعمل   
 
