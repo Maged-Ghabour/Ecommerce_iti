@@ -15,17 +15,16 @@ https://maged-ghabour.github.io/Ecommerce_iti/
 
 ### User
 
-- [ ] `Done`  Show All Product
-- [ ] `Done`  Add Product To Cart
-- [ ] `Done`  delete product from cart
-- [ ] `Done`  delete All products from cart
+- [x] `Done`  Show All Product
 - [x] `Done`  login
 - [ ] `Done`  Register
 - [x] `Done`  Logout
 
 
 ### Cart
-
+- [x] `Done`  Add Product To Cart
+- [x] `Done`  delete product from cart
+- [x] `Done`  delete All products from cart
 
 
 
