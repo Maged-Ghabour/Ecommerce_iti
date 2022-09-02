@@ -12,13 +12,16 @@ https://maged-ghabour.github.io/Ecommerce_iti/
 - [x] `Done`      Edit Product
 - [x] `Done`      Search to Product
 - [ ] `Done`      show All users
+- [x] `Done`      Login
+- [x] `Done`.     Logout
 
 ### User
 
 - [x] `Done`  Show All Product
-- [x] `Done`  login
-- [ ] `Done`  Register
-- [x] `Done`  Logout
+- [x] `Done`    filter categories
+- [ ] `Done`    Logout
+- [ ] `Done`     Login
+
 
 
 ### Cart
@@ -32,6 +35,13 @@ https://maged-ghabour.github.io/Ecommerce_iti/
 - [x] `Done`  validation to image 
 - [x] `Done`  Check if Product Exists Not Add New Product
 - [x] `Done`  Sweet Alert
+
+
+## What's Next 
+- [x] `Done`  product Cards design 
+- [ ] `Done`  Cart page Design 
+- [ ] `Done`  Registration 
+
 
 
 ## Questions 
