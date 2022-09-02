@@ -145,15 +145,12 @@ body
 
 .addToCart 
 {
-    background-color: rgb(30, 119, 30);
+   
     padding: 10px;
     border-radius: 20px;
-    margin-left: 10px;
-    color: white;
     font-weight: bold;
     border: none;
     margin-top: 10px;
-    margin-bottom: 10px;
 }
 
 .removeFromCart 
@@ -176,6 +173,7 @@ body
 .discover
 {
     overflow: hidden;
+    height: 100vh;
 }
 .discover .chef
 {
@@ -187,6 +185,7 @@ body
     width: 100%;
     float: right;
     padding: 40px;
+    margin: 70px 0;
 }
 .discover .discover-chef
 {
@@ -195,6 +194,7 @@ body
     width: 60%;
     float: left;
     text-align: center;
+    margin: 80px 0;
 }
 .discover .discover-chef span
 {
@@ -217,10 +217,19 @@ body
 }
 .out-door
 {
-    height: 350px;
+    height: 500px;
     background-image: url(../images/bgs.jpg);
     background-size: cover;
     background-attachment: fixed;
+    z-index: 99;
+}
+
+.heading-cat{
+    text-align: center;
+    margin: 80px auto 20px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 50px;
 }
 /* .meals
 {
@@ -268,7 +277,7 @@ body
     display: inline-block;
     font-weight: bold;
     padding:  20px;
-    margin: 30px 20px;
+    margin: 10px 20px;
     border-radius: 7px;
     background: #ffffff;
     box-shadow:  12px 12px 24px #d9d9d9,
@@ -381,13 +390,56 @@ body
     margin-right: 30px;
 }
 #product {
+    margin-top: 20px;
     display: grid;
     grid-template-columns: 200px 200px 200px 200px 200px 200px;
     gap: 50px;
-}
-.cards{
   
-    
+}
+#product img{
+    max-width: 100%;
+    width: 100%;
+}
+
+#product .cards{
+    background-color: #fff;
+    overflow: hidden;
+    text-align: center;
+    border-radius: 6px;
+    box-shadow: 0 2px 15px rgb(0 0 0 /10%) ;
+    transition: all 0.3s;
+    margin-bottom: 20px;
+}
+#product .cards:hover{
+    transform: translateY(-10px);   
+    box-shadow: 0 2px 15px rgb(0 0 0 /20%) ;
+ 
+}
+#product .cards .content{
+    padding: 20px;
+}
+#product .cards h3{
+    margin: 0;
+}
+#product .cards p{
+margin: 10px 0 0 ;
+line-height: 1.5;
+color: #777;
+}
+#product .cards small{
+    background-color: #6c757d;
+    color: #fff;
+    display: inline-block;
+    font-weight: bold;
+   
+    border-radius: 20%;
+    padding: 5px;
+    margin-top: 6px;
+}
+#product .cards button{
+    background-color: #f4e409;
+    width: 100%;
+    color: #231f20;
 }
 .layer
 {

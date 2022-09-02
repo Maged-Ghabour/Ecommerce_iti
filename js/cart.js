@@ -128,9 +128,11 @@ let removeItem = (id) => {
 };
 
 let clearCart = () => { 
-  basket = [];
+  basket = []
   generateCartItems();
-  localStorage.setItem("allProducts", JSON.stringify(basket));
+  localStorage.setItem("cartData", JSON.stringify(basket));
+  location.reload()
+
 };
 
 let TotalAmount = () => {

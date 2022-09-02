@@ -21,27 +21,35 @@ function displayProducts(){
         productsRows += `        
             <div class="cards ${productsContainer[i].category}" id="product-id-${productsContainer[i].id}">
                 
-             <img src="${productsContainer[i].image.replace("C:\\fakepath\\" , "imgs/")}" width="100%" min-height="270px"> 
-             <h3>${productsContainer[i].name}</h3>
-            <div class="between">
-              <p>${productsContainer[i].category}</p>
-              <h3> ${productsContainer[i].price} $</small>
+            <img src="${productsContainer[i].image.replace("C:\\fakepath\\" , "imgs/")}" width="100%" min-height="270px"> 
+
+            <div class="content">
+
+      
+                <h3>${productsContainer[i].name}</h3>
+                
+                  <p>${productsContainer[i].category}</p>
+                  <small> ${productsContainer[i].price} $</small>
+           
+                <p>${productsContainer[i].desc}</p>
+              
+                
+             
+                        
+                        <button class="addToCart" id="addToCart" onclick="increment(${id})">Add To Cart 
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span id="${id}" onclick="output()" class="quantity"
+                        
+                         ${search.item === undefined ? 0 : search.item}
+                         </span>
+                        </button>
+                        
+               
+              
+
+
             </div>
-            <p>${productsContainer[i].desc}</p>
-          
-            
-                <div class="footer-cart">
-                    
-                    <button class="addToCart" id="addToCart" onclick="increment(${id})">Add To Cart
-                    <span id="${id}" onclick="output()" class="quantity"
-                    style="font-weight: bold;color:#fff;background-color: red;width: 40px;height: 40px;border-radius: 50%;padding:5px">
-                     ${search.item === undefined ? 0 : search.item}
-                     </span>
-                    </button>
-                    
-                    
-                </div>
-            </button>
+
 
               
             </div>
@@ -70,11 +78,15 @@ function displayProducts(){
 function displayCats(){
    
     let cats = JSON.parse(localStorage.getItem("allCategories"));
-    let catsRows = ``
-    for (let i = 0; i <  cats.length; i++) {
-        catsRows += `<li class="cat" data-cat=".${cats[i].name}">${cats[i].name}</li>`
+
+    if(localStorage.getItem("allCategories")){
+        let catsRows = ``
+        for (let i = 0; i <  cats.length; i++) {
+            catsRows += `<li class="cat" data-cat=".${cats[i].name}">${cats[i].name}</li>`
+        }
+        document.getElementById("cats").innerHTML = catsRows
     }
-    document.getElementById("cats").innerHTML = catsRows
+ 
 }
 
 displayCats()
