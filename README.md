@@ -38,7 +38,7 @@ https://maged-ghabour.github.io/Ecommerce_iti/
 
 
 ## What's Next 
-- [ ] `Done`  product Cards design 
+- [x] `Done`  product Cards design 
 - [ ] `Done`  Cart page Design 
 - [ ] `Done`  Registration 
 
