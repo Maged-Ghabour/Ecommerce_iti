@@ -1,0 +1,74 @@
+.PopupSuccess{
+    position: absolute;
+    transition: all .6s;
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    width: 320px;
+    height: 80px;
+    padding: 0 5px;
+    transform: translate(-50%,-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3em;
+    font-weight: bold;
+    border-radius: 3px;
+    color: #fff;
+    border-radius: 10px;
+    background: #34e065;
+    box-shadow: inset -20px -20px 60px #2cbe56,
+                inset 20px 20px 60px #3cff74;
+
+}
+.PopupDelete{
+    position: absolute;
+    transition: all .6s;
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    width: 320px;
+    height: 80px;
+    padding: 0 5px;
+    transform: translate(-50%,-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3em;
+    font-weight: bold;
+    border-radius: 3px;
+    color: #fff;
+    border-radius: 10px;
+    background: #d64933;
+    background: linear-gradient(315deg, #c1422e, #e54e37);
+    box-shadow:  -20px -20px 60px #d44832,
+                 20px 20px 60px #d84a34;
+
+}
+
+.PopupUpdate{
+    position: absolute;
+    transition: all .6s;
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    width: 330px;
+    height: 80px;
+    padding: 0 5px;
+    transform: translate(-50%,-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3em;
+    font-weight: bold;
+    border-radius: 3px;
+    color: #fff;
+    border-radius: 10px;
+    background: linear-gradient(315deg, #5454b7, #6464d9);
+    box-shadow:  -6px -6px 10px #5b5bc7,
+                 6px 6px 10px #5f5fcf;
+
+}
+
+
+

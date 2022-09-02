@@ -12,8 +12,13 @@
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;900&display=swap" rel="stylesheet">
             <link rel="stylesheet" href="css/style.css">
+
+            <!-- ! Popups -->
+            <link rel="stylesheet" href="css/popus.css">
 </head>
-<body> 
+<body>
+
+
 
     <div class="navbar">
         <div class="container">
@@ -45,7 +50,7 @@
                     <label for="productCategory">product Category:</label>
                     <!-- <input type="text" name="productCategory" id="productCategory" autocomplete="off"> -->
                     <select name="productCategory" id="productCategories">
-                     <option disabled>Select Category :</option>
+                     <option disabled selected>Select Category</option>
                     </select>
                     <small class="validateProductCats">PLZ Enter Product categories 😃</small>
 
@@ -53,7 +58,7 @@
                 <div class="mb-3">
                     <label for="productImage">product Image:</label>
                     <input type="file" name="productImage" id="productImage">
-                    <small>Product Name must be Chars only</small>
+                    <small class="validateProductImg">Product Image Must be type of (png,jpg,jpeg,webp)</small>
 
                 </div>
 
@@ -101,6 +106,23 @@
 </div>
 
 
+
+    <!-- ! Start Popups -->
+    <div id="PopupSuccess" class="PopupSuccess">
+        <p> Product Added Successfully &nbsp;  <span style="font-weight: 900; font-size: 30px;"><i class="fa-solid fa-check"></i> </span></p>
+     </div>
+     
+     <div id="PopupDelete" class="PopupDelete">
+        <p> Product Deleted Successfully &nbsp;  <span style="font-weight: 900; font-size: 30px;"><i class="fa-solid fa-xmark"></i> </span></p>
+     </div>
+     <div id="PopupUpdate" class="PopupUpdate">
+        <p> Product Updated Successfully &nbsp;  <span style="font-weight: 900; font-size: 30px;"><i class="fa-solid fa-check"></i> </span></p>
+     </div>
+
+
+     <!-- ! End Popups -->
+
+     
 
 <script src="js/cookies.js"></script>
 <script src="js/main.js"></script>

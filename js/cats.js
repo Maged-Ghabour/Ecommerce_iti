@@ -22,15 +22,15 @@ searchCategory.onkeyup = function()
     var cols = "";
     for (var i=0;i<categoryContainer.length;i+=1)
        {
-            if (categoryContainer[i].name.includes(searchCategory.value.toLowerCase()))
+            if (categoryContainer[i].name.toLowerCase().includes(searchCategory.value.toLowerCase()))
             {
                 cols+=`
                 <tr>
                     <td>${i}</td>
                     <td>${categoryContainer[i].name}</td>
                     <td>
-                        <button class="btn-update" id="btn-delete" onclick="retrive(${i})"><i class="fa fa-edit" </i></button>
-                        <button class='btn-delete' onclick='deleteCat(${i})'><i class="fa fa-trash"></i></button>
+                        <button class="btn-update" id="btn-delete" onclick="retrive(${i})"> <i class="fa fa-edit" </i></button>
+                        <button class='btn-delete' onclick='deleteCat(${i})'> <i class="fa fa-trash"></i> </button>
                     </td>
                 </tr>`
             }
@@ -77,10 +77,27 @@ function addCategory()
     let category = {
         name : categoryNameInput.value,
     }
-    categoryContainer.push(category)
-    localStorage.setItem("allCategories" , JSON.stringify(categoryContainer))
-    displayCats()
-    clearForm()
+
+
+//  ! Validation if Category Name is Exist
+    if(categoryContainer.some(cat => cat.name === document.getElementById("categoryNameInput").value)){
+        document.querySelector(".validateCategoryNameOne").style.display = "block"
+    } else{
+        document.querySelector(".validateCategoryNameOne").style.display = "none"
+        
+        categoryContainer.push(category)
+        localStorage.setItem("allCategories" , JSON.stringify(categoryContainer))
+        displayCats()
+        clearForm()
+        document.getElementById("categoryNameInput").focus()
+    }
+
+
+
+
+
+
+   
 }
 }
 
@@ -132,3 +149,18 @@ function updatefun()
 }
 
 // ! End Add New Category
+
+
+// ! Start distroy Section
+document.getElementById("logout").addEventListener("click" ,()=>{
+    location.href = "login.html"
+    deleteAllCookies();
+})
+// ! End distroy Section
+
+
+
+/*  ! Validate 
+**
+*/
+

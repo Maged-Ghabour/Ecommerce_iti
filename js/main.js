@@ -1,30 +1,3 @@
-
-// ! Authorization 
-/*   Authorization Page */
-let adminEmail = getCookie("email");
-let adminPassword = getCookie("password");
-
-    if(adminEmail !== "iti@yahoo.com" && adminPassword !== "Iti01234" ){
-        location.href = "login.html"      
-    }
-/*   Authorization Page */
-      
-
-// ! End Authorization
-
-
-
-
-// ! Start distroy Section
-document.getElementById("logout").addEventListener("click" ,()=>{
-    location.href = "login.html"
-    deleteAllCookies();
-})
-// ! End distroy Section
-
-
-
-
 //   ! Start Add Product Page 
 
 let productNameInput = document.getElementById("productName");
@@ -34,85 +7,22 @@ let productImageInput = document.getElementById("productImage");
 let productDescInput = document.getElementById("productDesc");
 let btnAddProduct = document.getElementById("btnAddProduct");
 
-let search_bar = document.getElementById("search");
-
-var toggole = false; 
-var globalindex = 0;
-
-
 
 let productsContainer = [];
-
-
 if(localStorage.getItem("allProducts") != null){
     productsContainer = JSON.parse(localStorage.getItem("allProducts"))
     displayProducts()
 }
 
 
-
-
-
-function init ()
-{
-    if (!toggole)
-        {
-            addProduct();
-            displayProducts();
-        }
-    else 
-        {
-            updatefun(); 
-            btnAddProduct.innerHTML="Add Product"
-        }
-    
-    toggole = false; 
-}
-
-
-
-search_bar.onkeyup = function()
-{
-    var cols = "";
-    for (var i=0;i<productsContainer.length;i+=1)
-       {
-            if (productsContainer[i].name.includes(search_bar.value.toLowerCase()) || productsContainer[i].category.includes(search_bar.value.toLowerCase()))
-            {
-                cols+=`
-                <tr>
-                    <td>${i}</td>
-                    <td>${productsContainer[i].name}</td>
-                    <td>${productsContainer[i].price}</td>
-                    <td>${productsContainer[i].category}</td>
-                    <td><img  width="100%" height="100%"  src="${productsContainer[i].image.replace("C:\\fakepath\\" , "imgs/")}"></td>
-                    <td>${productsContainer[i].description}</td>
-                    <td>
-                        <button class="btn-update" id="btn-delete" onclick="retrive(${i})">Edit</button>
-                        <button class='btn-delete' onclick='deletefun(${i})'>delete</button>
-                    </td>
-                </tr>`
-            }
-       }
-    document.getElementById("productsWrapper").innerHTML=cols;
-}
-
-
-
-
+// ! Add Product
 function addProduct(){
-
-   
-
 
     // ! Start Validation 
     if(validateForm() == true){
    
-        // ! End Validation 
+    // ! End Validation 
         
-    
-    
-    
-    
         let product = {
             id   : new Date().valueOf(),
             name : productNameInput.value,
@@ -122,16 +32,11 @@ function addProduct(){
             desc : productDescInput.value
     
         }
-    
-            productsContainer.push(product)
-    
+            productsContainer.push(product) 
             localStorage.setItem("allProducts" , JSON.stringify(productsContainer))
-        
             displayProducts()
-            // showCats()
-        
             clearForm()
-    
+            alertSuccess()
     }   
 }
 
@@ -146,11 +51,10 @@ btnAddProduct.addEventListener("click" , function addProduct(e) {
 
 
 
+// ! Show All Categories in Select input
+
 function showCats(){
-
    
-    console.log(productCategories);
-
     let allCategories = JSON.parse(localStorage.getItem("allCategories"));
     
 
@@ -159,14 +63,11 @@ function showCats(){
         <option value="${allCategories[index].name}">${allCategories[index].name}</option>
          ` 
     }
-
-   
 }
 
 showCats()
 
-
-
+// ! Clear All Inputs 
 function clearForm(){
     productNameInput.value =""
     productPriceInput.value =""
@@ -175,16 +76,14 @@ function clearForm(){
     productDescInput.value =""  
 }
 
-
-
+// ! Show All Products in Table 
 function displayProducts(){
-
-    
+ 
     let productsRows = ``
 
     for (let i = 0; i <  productsContainer.length; i++) {
 
-        console.log(productsContainer[i].image.replace("C:\\fakepath\\" , "imgs/"));
+      
   
     // productImageInput.addEventListener("change" , function(){
 
@@ -202,23 +101,17 @@ function displayProducts(){
             
     //     })
     //      reader.readAsDataURL(this.files[0]);
-    // });
-
-    
+    // }); 
 
         productsRows += `
-        
             <tr>
-                
                 <td>${i}</td>
                 <td>${productsContainer[i].name}</td>
                 <td>${productsContainer[i].price}</td>
                 <td>${productsContainer[i].category}</td>
-                <td><img  width="100%" height="100%"  src="${productsContainer[i].image.replace("C:\\fakepath\\" , "imgs/")}"></td>
-                <td>${productsContainer[i].desc}</td>
+                <td><img src="${productsContainer[i].image.replace("C:\\fakepath\\" , "imgs/")}" alt="Avatar" style="width:100% ;border-radius:5% 5% 0 0">
+                <td>${productsContainer[i].desc}</td></td>
                 <td><button class='btn-update' onclick='retrive(${i})'><i class="fa-solid fa-pen-to-square fa-xl"></i><button class='btn-delete' onclick='deleteProduct(${i})'><i class="fa-solid fa-trash fa-xl"></i></button></button></td>
-              
-            
             
             </tr>
         `
@@ -229,25 +122,50 @@ function displayProducts(){
 }
 
 
+
+// ! Delete Product 
 function deleteProduct(index){
 
     productsContainer.splice(index,1);
     displayProducts();
+  
+    alertDelete()
+    
     localStorage.setItem("allProducts" , JSON.stringify(productsContainer))
 }
 
-
+//  ! Update Product 
+var toggole = false; 
+var globalindex = 0;
+function init ()
+{
+    if (!toggole)
+        {
+            addProduct();
+            displayProducts();
+        }
+    else 
+        {
+            updatefun(); 
+            btnAddProduct.innerHTML="Add Product"
+        }
+    
+    toggole = false; 
+}
 
 function retrive(id)
 {
     productNameInput.value = productsContainer[id].name; 
     productPriceInput.value = productsContainer[id].price; 
     productCategories.value = productsContainer[id].category; 
-    // productImageInput.value = productsContainer[id].image; 
     productDescInput.value = productsContainer[id].desc;
     toggole = true; 
     globalindex = id; 
     btnAddProduct.innerHTML="Update Product";
+     window.scrollTo({
+        top: 200,
+        behavior: 'smooth',
+      });
 }
 
 function updatefun()
@@ -255,29 +173,48 @@ function updatefun()
     productsContainer[globalindex].name = productNameInput.value; 
     productsContainer[globalindex].price = productPriceInput.value;
     productsContainer[globalindex].category = productCategories.value; 
-    // productsContainer[globalindex].image = productImageInput.value; 
     productsContainer[globalindex].desc = productDescInput.value;
     localStorage.setItem("allProducts" , JSON.stringify(productsContainer));
     displayProducts(); 
     clearForm();
+    alertUpdate()
 }
 
 
+let search_bar = document.getElementById("search");
+search_bar.onkeyup = function()
+{
+    var cols = "";
+    for (var i=0;i<productsContainer.length;i+=1)
+       {
+            if (productsContainer[i].name.toLowerCase().includes(search_bar.value.toLowerCase()))
+            {
+                cols+=`
+                <tr>
+                    <td>${i}</td>
+                    <td>${productsContainer[i].name}</td>
+                    <td>${productsContainer[i].price}</td>
+                    <td>${productsContainer[i].category}</td>
+                    <td><img  width="100%" height="100%"  src="${productsContainer[i].image.replace("C:\\fakepath\\" , "imgs/")}"></td>
+                    <td>${productsContainer[i].desc}</td>
+                    <td>
+                        <button class="btn-update" id="btn-delete" onclick="retrive(${i})">Edit</button>
+                        <button class='btn-delete' onclick='deletefun(${i})'>delete</button>
+                    </td>
+                </tr>`
+            }
+       }
+    document.getElementById("productsWrapper").innerHTML=cols;
+}
 
-// ! End Add Product Page  
-
-
-
-
-
-
-
+// ! Validation inputs (productName , ProductPrice , ... etc)
 
 function validateForm() {
 
   
     let charsOnly = /^[a-z A-Z\u0621-\u064A0]*$/; // Alow To write Arabic Letters
-    let numbersOnly = /^\d+$/; // Alow To write Arabic Letters
+    let numbersOnly = /^\d+$/; 
+    let imageOnly = /(\.jpg|\.jpeg|\.png|\.gif|\.webp)$/i;
 
     if (productNameInput.value == "" || !productNameInput.value.match(charsOnly)) {
         document.querySelector(".validateProductName").style.display = "block"
@@ -295,17 +232,23 @@ function validateForm() {
     }else{
         document.querySelector(".validateProductPrice").style.display = "none"
     }
-    if ((productCategories.value == "" )) {
+    if ((productCategories.value == "" || productCategories.value == "Select Category")) {
         document.querySelector(".validateProductCats").style.display = "block"
-        productPriceInput.focus() ;
+        productCategories.focus() ;
         return false;
     }else{
         document.querySelector(".validateProductCats").style.display = "none"
+    }if ((!productImageInput.value.match(imageOnly) )) {
+        document.querySelector(".validateProductImg").style.display = "block"
+        validateProductImg.focus() ;
+        return false;
+    }else{
+        document.querySelector(".validateProductImg").style.display = "none"
     }
 
     if ((productDescInput.value == "" )) {
         document.querySelector(".validateProductDesc").style.display = "block"
-        productPriceInput.focus() ;
+        productDescInput.focus() ;
         return false;
     }else{
         document.querySelector(".validateProductDesc").style.display = "none"
@@ -316,3 +259,60 @@ function validateForm() {
     return true;
  }
 
+
+
+ // ! Alert Messages When Added,Updated or Deleted Products
+
+
+ let alertSuccess= ()=>{
+    document.getElementById("PopupSuccess").style.opacity = 1
+    setTimeout(() => {
+        document.getElementById("PopupSuccess").style.opacity = 0
+    }, 1000);
+ }
+
+
+ 
+ let alertDelete= ()=>{
+    window.scrollTo({
+        top: 200,
+        behavior: 'smooth',
+      });
+    document.getElementById("PopupDelete").style.opacity = 1
+    setTimeout(() => {
+        document.getElementById("PopupDelete").style.opacity = 0
+    }, 1000);
+ }
+
+  
+ let alertUpdate= ()=>{
+    window.scrollTo({
+        top: 200,
+        behavior: 'smooth',
+      });
+    document.getElementById("PopupUpdate").style.opacity = 1
+    setTimeout(() => {
+        document.getElementById("PopupUpdate").style.opacity = 0
+    }, 1000);
+ }
+
+
+ 
+// ! Authorization 
+let adminEmail = getCookie("email");
+let adminPassword = getCookie("password");
+
+    if(adminEmail !== "iti@yahoo.com" && adminPassword !== "Iti01234" ){
+        location.href = "login.html"      
+    }
+// ! End Authorization
+
+
+
+
+// ! Start distroy Section
+document.getElementById("logout").addEventListener("click" ,()=>{
+    location.href = "login.html"
+    deleteAllCookies();
+})
+// ! End distroy Section

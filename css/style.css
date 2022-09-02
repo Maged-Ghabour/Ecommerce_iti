@@ -116,7 +116,8 @@ body{
     margin-bottom:3px;
 }
 
-.add-form label{
+.add-form label,
+.products-table label{
     color: #540b0e;
     font-weight: bold;
     font-size: 18px;
@@ -126,7 +127,8 @@ body{
 }
 
 .add-form input,
-.add-form #productCategories
+.add-form #productCategories,
+.products-table input
 {
     width: 100%;
     height: 40px;
@@ -135,11 +137,21 @@ body{
     font-size: 16px;
     border: 1px solid #ddd;
 }
+.products-table input{
+    margin-bottom: 15px;
+
+}
+
+
 .add-form input:focus,
-.add-form #productCategories{
+.add-form #productCategories,
+.products-table input:focus{
     outline:1px solid #9a8c98 ;
    
 }
+
+
+
 .add-form input[type=file]{
     padding: 0;
     margin:0;
@@ -214,16 +226,6 @@ body{
     font-weight: bold;
     display: none;
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -306,6 +308,7 @@ text-align: right;
 
 
 
+
 /*              ! End Table Of Products              */
 
 
@@ -326,7 +329,8 @@ text-align: right;
 
 
 /* ! Start Add Category Page */
-.validateCategoryName{
+.validateCategoryName,
+.validateCategoryNameOne{
     display: none;
     color: #ef233c;
     font-weight: bold;

@@ -1,142 +1,120 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Ecommerce</title>
-                <!-- ! Font Awesome Library CDN -->
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-                <!-- ! google Fonts CDN (cairo) -->
-                <link rel="preconnect" href="https://fonts.googleapis.com">
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-                <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;900&display=swap" rel="stylesheet">
-                <link rel="stylesheet" href="css/index.css">
-</head>
-<body>
-    <div class="container">
-        <div class="Nav">
-            <div class="logo">Ecommerce</div>
-            <div class="search"><input type="text" value="search"><i class="fa-solid fa-magnifying-glass"></i></div>
-            <div class="list">
-                <div><a href="#">HOME</a></div>
-                <div><a href="#product">SHOP</a></div>
-                <div><a href="#">ABOUT</a></div>
-                <div><a href="Contact.html">CONTACT</a></div>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/index.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Dancing+Script"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="Home">
+      <div class="nav">
+        <ul>
+          <li class="logo">
+            <a href="#">
+              <img src="images/restaurant.png" />
+            </a>
+          </li>
+          <li class="cart">
+            <a href="cart.html"
+              ><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+              <span id="cart-amount" class="cart-amount">0</span>
+            </a>
+          </li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Home</a></li>
+        </ul>
+      </div>
 
-                <!-- ! Start Styling Cart  -->
-                <div class="cart">
-                    <a href="cart.html">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                        <div id="cart-amount" class="cart-amount">0</div>
-                    </a>
-                </div>
-                <!-- ! End Styling cart  -->
-            </div>
-        </div>
-        <div class="header">
-            <div class="shoptogether">
-            <div>
-                <a>Shop Together</a>
-            </div>
-            <div>
-                <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio esse, officia illo nemo facere cupiditate incidunt? Temporibus est, error iure ad vitae officia magni aliquid, saepe et quos hic nobis.
-                </p>
-            </div>
-                <div class="btn"> 
-                  <input  type="button" value="VIEW MORE">
-                </div>
-            </div>
-        </div>
-        <div class="section">
-            <div class="sec1">
-                <div class="needs">
-                <p class="p1">Explore your needs...</p>
-                <p class="p2"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus ipsa deserunt omnis nemo, ipsum consequatur similique accusamus totam repellendus eius aliquam aspernatur expedita illum saepe eveniet commodi explicabo veniam rem. </p>
-               </div>
-            </div>
-            <div class="categories" id="showCategories">
-                <span style="font-size:30px ;" class="active">All Categories</span>
-                <ul id="cats"></ul>
-            </div>
+      <div class="caption">
+        <img src="images/restaurant.png" />
+        <h1>Shopping Carts</h1>
+        <p>The best Store You can Shopping</p>
+      </div>
+    </div>
+    <!-- section home end  -->
 
-            <div class="category">
-               <div class="card">
-                 <div class="img"><img width="100%" height="50%" src="imgs/300.jpg">
+    <!-- section Discover start  -->
 
+    <div class="discover">
+      <div class="chef">
+        <img src="images/product01.svg" />
+      </div>
 
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat 
-                     repellendus recusandae et aperiam vero quia harum debitis perspiciatis quasi, </p>
+      <div class="discover-chef">
+        <span>Discover</span>
+        <h2>OUR STORY</h2>
 
+        <p>
+          Omnicos directe al desirabilite de un nov lingua franca. interfaces
+          without scalable users. Energistically administrate intermandated
+          materials without leveraged technologies. On refusa continuar payar
+          custosi traductores. At solmen va esser necessi far uniform
+          grammatica, pronunciation e plu sommun paroles ma quande lingues
+          coalesce li grammatica.
+        </p>
 
-                    <input type="button"value="ACCESSORIES">
-                </div>
-               </div>
-               <div class="card">
-                 <div class="img"><img width="100%" height="50%" src="imgs/300.jpg">
+        <button>ABOUT US</button>
+      </div>
 
-
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat 
-                     repellendus recusandae et aperiam vero quia harum debitis perspiciatis quasi, </p>
-
-
-                    <input type="button"value="ACCESSORIES">
-                </div>
-               </div>
-               <div class="card">
-                <div class="img"><img width="100%" height="50%" src="imgs/300.jpg">
-
-
-                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat 
-                    repellendus recusandae et aperiam vero quia harum debitis perspiciatis quasi, </p>
-
-
-                   <input type="button"value="ACCESSORIES">
-               </div>
-              </div>
-            </div>
-            <div class="hederOfbroduct">
-                <p class="p1">Explore your needs products...</p>
-                <p class="p2"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus ipsa deserunt omnis nemo, ipsum consequatur similique accusamus totam repellendus eius aliquam aspernatur expedita illum saepe eveniet commodi explicabo veniam rem. </p>
-            </div>
-
-            
-
-            <div id="product">
-                <div class="cards">
-                </div>
-            </div>
-        </div>
-        <div class="footer">
-            <div class="MailTO">
-             <form>
-                 <div>
-                     <p><lable>Your E-Mail :</lable></p>
-                     <input type="text" placeholder="Your email address">
-                 </div>
-                 <div >
-                    <input class="btn" type="button" value="SUBMIT" onclick=" ">
-                 </div>
-                </form>
-            </div>
-            <div class="con">
-             <div>
-                 <p>Adsress</p>
-                 <p>3721 Single Street
-                     Quincy, MA 02169</p>
-                </div>
-                <div>
-                 <p>CONTACTS</p>
-                 <p>123 456 7890
-                     info@tixly.com</p>
-                </div>
-            </div>
-         </div>
+      <div class="clr"></div>
     </div>
 
+    <div class="out-door"></div>
 
-    <script src="js/index.js"></script>
-</body>
+    <h1 style="text-align: center; margin: 10px">All Categories</h1>
+    <div class="cats">
+        <ul id="cats"></ul>
+       
+    </div>
+
+    <body>
+      <div class="container">
+          
+            <div id="product">
+              <div class="cards"></div>
+            </div>
+           
+      </div>
+        
+      </div>
+
+
+      <footer>
+        <div>
+           <p>Category</p>
+           <a href="">Women</a>
+           <a href="">Men</a>
+           <a href="">Shoes</a>
+           <a href="">Watches</a>
+        </div>
+        <div>
+           <p>HELP</p>
+           <a href="">Track</a>
+           <a href="">Return</a>
+           <a href="">Shipping</a>
+           <a href="">FAQs</a>
+        </div>
+        <div class="links">
+           <p>
+              GET IN TOUCH
+            </p>
+          <p>Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879</p>
+          <a class="links" href="http://www.google.com"><img src="./imgs/200.jpg" width="50px" height="50px"></a>
+          <a class="links" href="http://www.facebook.com"><img src="./imgs/200.jpg" width="50px" height="50px"></a>
+          <a class="links" href="http://www.whatsapp.com"><img src="./imgs/200.jpg" width="50px" height="50px"></a>
+        </div>
+     </footer>
+     
+      <script src="js/index.js"></script>
+    </body>
+  </body>
 </html>

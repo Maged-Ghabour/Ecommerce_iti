@@ -1,11 +1,8 @@
 
 let productsContainer = [];
 
-
 // ! retrive Cart from localStorage 
 let basket = JSON.parse(localStorage.getItem("cartData")) || []
-
-
 
 if(localStorage.getItem("allProducts") != null){
     productsContainer = JSON.parse(localStorage.getItem("allProducts"))
@@ -13,54 +10,58 @@ if(localStorage.getItem("allProducts") != null){
 }
 let cats = JSON.parse(localStorage.getItem("allCategories"));
 
-
 function displayProducts(){
-
     let productsRows = ``
-
-
     for (let i = 0; i <  productsContainer.length; i++) {
 
         let id = productsContainer[i].id
 
-    for (let i = 0; i <  productsContainer.length; i++) 
-    {
-
-
         let search = basket.find((x)=> x.id === id) || []
-
-        console.log(search);
         
-        productsRows += `
-
-        
-            <div class="cards" id="product-id-${productsContainer[i].id}">
+        productsRows += `        
+            <div class="cards ${productsContainer[i].category}" id="product-id-${productsContainer[i].id}">
                 
-            <div class="cards ${productsContainer[i].category} ">
-
-             <img src="${productsContainer[i].image.replace("C:\\fakepath\\" , "imgs/")}" alt="Avatar" style="width:100% ;border-radius:5% 5% 0 0"> 
-             <h4>${productsContainer[i].name}</h4>
-             <p>${productsContainer[i].category}</p>
-             <small> ${productsContainer[i].price} $</small>
+             <img src="${productsContainer[i].image.replace("C:\\fakepath\\" , "imgs/")}" width="100%" min-height="270px"> 
+             <h3>${productsContainer[i].name}</h3>
+            <div class="between">
+              <p>${productsContainer[i].category}</p>
+              <h3> ${productsContainer[i].price} $</small>
+            </div>
+            <p>${productsContainer[i].desc}</p>
           
-             <button type="button"> 
-                    <div class="footer-cart">
-                            <span onclick="increment(${id})">+</span>
-                            <span id="${id}" onclick="output()" class="quantity"> ${search.item === undefined ? 0 : search.item} </span>
-                            <span onclick="decrement(${id})">-</span>
-                    </div>
+            
+                <div class="footer-cart">
+                    
+                    <button class="addToCart" id="addToCart" onclick="increment(${id})">Add To Cart
+                    <span id="${id}" onclick="output()" class="quantity"
+                    style="font-weight: bold;color:#fff;background-color: red;width: 40px;height: 40px;border-radius: 50%;padding:5px">
+                     ${search.item === undefined ? 0 : search.item}
+                     </span>
+                    </button>
+                    
+                    
+                </div>
             </button>
-             
+
               
             </div>
         `
         
-
-          
     }
     document.getElementById("product").innerHTML = productsRows
 }
 
+
+/**
+ * 
+ * <span onclick="increment(${id})"> <i class="fa-solid fa-plus"></i> </span>
+ *  <span id="${id}" onclick="output()" class="quantity"> ${search.item === undefined ? 0 : search.item} </span>
+ * <span onclick="decrement(${id})"><i class="fa-solid fa-minus"></i></span>
+            <button class="addToCart" id="addToCart">Add To Cart</button>
+            <button class="removeFromCart" id="removeFromCart">Remove</button>
+             
+ * 
+ */
 
 //  ! Start Show Categories 
 
@@ -71,15 +72,45 @@ function displayCats(){
     let cats = JSON.parse(localStorage.getItem("allCategories"));
     let catsRows = ``
     for (let i = 0; i <  cats.length; i++) {
-        catsRows += `
-                <li data-cat=".${cats[i].name}">${cats[i].name}</li>`
-                console.log(catsRows);
+        catsRows += `<li class="cat" data-cat=".${cats[i].name}">${cats[i].name}</li>`
     }
     document.getElementById("cats").innerHTML = catsRows
 }
 
 displayCats()
 //  ! End Show Categories
+
+
+
+
+// Start Filtering The Products Categroy
+let allCats = document.querySelectorAll('#cats li')
+let productsCategory = Array.from(document.querySelectorAll('.cards'))
+
+
+// Start get the Li for any Cat
+allCats.forEach((li) => {
+    li.addEventListener('click', showRelated)
+})
+
+function showRelated()
+{
+    productsCategory.forEach((ele) => {
+        ele.style.display = 'none'
+    })
+    document.querySelectorAll(this.dataset.cat).forEach((ele) => {
+        ele.style.display = 'block'
+        console.log(this.dataset.cat)
+    })
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -93,7 +124,7 @@ displayCats()
 
 
 
-    let increment = (id)=>{
+ let increment = (id)=>{
     
         
     let search = basket.find((x)=> x.id === id)
@@ -166,23 +197,5 @@ displayCats()
  *  ! End Add To Cart 
  **/
 
-// Start Filtering The Products Categroy
-let allCats = document.querySelectorAll('#cats li')
-let productsCategory = Array.from(document.querySelectorAll('.cards'))
 
 
-// Start get the Li for any Cat
-allCats.forEach((li) => {
-    li.addEventListener('click', showRelated)
-})
-
-function showRelated()
-{
-    productsCategory.forEach((ele) => {
-        ele.style.display = 'none'
-    })
-    document.querySelectorAll(this.dataset.cat).forEach((ele) => {
-        ele.style.display = 'block'
-    })
-}
-}
