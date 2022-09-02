@@ -38,32 +38,27 @@ let generateCartItems = () => {
           <div class="cart-item">
           <img width="100" src="${(search.image).replace("C:\\fakepath\\" , "imgs/")}" />
           <div class="details">
-
-          </div>
-              <div class="title-price-x">
-              <h4  class="title-price">
-                <p>${search.name}</p>
-                
-                <p class="cart-item-price">$ ${search.price}</p>
-                
+              <h4  class="product-title">
+              ${search.name}
               </h4>
-                <i class="fa-solid fa-xmark"></i>
-              </div>
 
-
+              <p class="cart-item-price">$ ${search.price}</p>
+            
               <div class="buttons">
-                  <i onclick="increment(${id})" class="fa-solid fa-plus"></i>
+                  <i onclick="increment(${id})" class="fa-solid fa-plus icon"></i>
                     <div id="${id}" class="quantity">
                       ${item}
                     </div>
-                  <i  onclick="decrement(${id})" class="fa-solid fa-minus"></i>
+                  <i  onclick="decrement(${id})" class="fa-solid fa-minus icon"></i>
               </div>
-              <h3>$ ${item * search.price} </h3>
+              <h3 class="total-price">$ ${item * search.price} </h3>
           </div>
           </div>
         `
       })
       .join(""));
+
+      //     <i class="fa-solid fa-xmark"></i>
   } else {
     ShoppingCart.innerHTML = ``;
     label.innerHTML = `
@@ -147,8 +142,7 @@ let TotalAmount = () => {
       .reduce((x, y) => x + y, 0);
     // console.log(amount);
     label.innerHTML = `
-    <h2>Total Bill : $ ${amount}</h2>
-    <button class="checkout">Checkout</button>
+    <h2>Total of All Products is  : ${amount} $ </h2>
     <button onclick="clearCart()" class="removeAll">Clear Cart</button>
     `;
   } else return;

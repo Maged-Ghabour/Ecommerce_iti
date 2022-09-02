@@ -9,26 +9,45 @@
                   <!-- ! Font Awesome Library CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="css/cart.css">
+  <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
-  <div class="navbar">
-    <a href="index.html">
-      <h2>Ecommerce</h2>
-    </a>
+  <div class="Home">
+    <div class="nav">
+      <ul>
+        <li class="logo">
+          <a href="index.html" id="logo">
+            Ecommerce
+          </a>
+        </li>
 
-    <a href="cart.html">
-      <div class="cart">
-        <i class="fa-solid fa-cart-shopping"></i>
-        <div id="cartAmount" class="cartAmount">0</div>
-      </div>
-    </a>
+
+        <li class="cart">
+          <a href="cart.html"
+            ><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            
+            <span id="cartAmount" class="cartAmount cart-amount">0</span>
+          </a>
+        </li>
+        <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="index.html">Home</a></li>
+
+
+      </ul> 
+  
+  
+    </div>
 
   </div>
 
+<div class="cart-content">
+  
   <div id="label" class="text-center"></div>
 
   <div class="shopping-cart" id="shopping-cart"></div>
+</div>
 </body>
 
 <script src="js/cart.js"></script>

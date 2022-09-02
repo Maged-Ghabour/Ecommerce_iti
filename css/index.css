@@ -103,6 +103,29 @@ body
     overflow: hidden;
 
 }
+
+.nav .cart{
+    position: relative;
+}
+.nav .cart #cart-amount{
+    position: absolute;
+    font-size: 14px;
+    top: 2px;
+    right: 15px;
+    background-color: red;
+    padding: 0 3px;
+    color: #fff;
+    border-radius: 2px;
+    
+}
+.nav .cart  i{
+    font-size: 25px;
+    color: #003049;
+    transition: all 0.6s;
+}
+.nav .cart  i:hover{
+    transform: translateY(-3px);
+}
 .nav ul li
 {
     padding:15px 30px;
@@ -113,7 +136,7 @@ body
 
 .nav ul li a
 {  
-    color: #231f20;
+    color: #003049;
     font-size: 18px;
     text-decoration: none;
     display: block;
@@ -140,7 +163,7 @@ body
 }
  #logo{
     font-size: 30px;
-    color: #f72585;
+    color: #264653;
 }
 
 .addToCart 
