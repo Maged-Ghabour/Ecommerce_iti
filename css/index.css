@@ -2,6 +2,7 @@
 body
 {
     font-family: 'segoe ui light';
+  
 }
 *
 {
@@ -44,10 +45,35 @@ body
 }
 .home .caption
 {
-    color: #fff;
+    animation : up-and-down 5s linear infinite;
+    color: #264653;
     text-align: center;
-    padding-top: 50px;
+    position: absolute;
+    top: 50%;
+    left: 10px;
 }
+
+/* ! With Me */
+
+@keyframes up-and-down {
+    0%,
+    100% {
+      top: 40%;
+    }
+    50% {
+      top: 30%;
+    }
+  }
+
+
+
+.home .caption img{
+
+    width: 400px;
+
+   
+}
+/* ! With Me */
 
 .home p
 {
@@ -69,10 +95,13 @@ body
 }
 .nav ul
 {
-    background-color:rgba(0, 0, 0, 0.7);
+    background-color: white;
+    box-shadow: 0 0 0 0 #ddd;
+    color: #231f20;
     list-style-type:none;
     padding-left: 0;
     overflow: hidden;
+
 }
 .nav ul li
 {
@@ -83,11 +112,13 @@ body
 }
 
 .nav ul li a
-{
-    color: #fff;
+{  
+    color: #231f20;
     font-size: 18px;
     text-decoration: none;
     display: block;
+    
+
 }
 .nav ul li a:hover
 {
@@ -103,7 +134,13 @@ body
 .nav .logo
 {
     float: left;
-    padding-top: 0px;
+    padding-top: 10px;
+    font-family: 'Dancing Script', cursive;
+    
+}
+ #logo{
+    font-size: 30px;
+    color: #f72585;
 }
 
 .addToCart 
@@ -142,13 +179,13 @@ body
 }
 .discover .chef
 {
-    background-color: yellow;
+    float: right;
     width: 40%;
 }
 .discover .chef img
 {
     width: 100%;
-    float: left;
+    float: right;
     padding: 40px;
 }
 .discover .discover-chef

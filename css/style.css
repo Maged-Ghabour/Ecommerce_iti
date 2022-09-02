@@ -97,14 +97,17 @@ body{
     ! Start Add Page 
 */
 
-.navbar .addCategory{
+.navbar .addCategory,
+.navbar .home{
     text-decoration: none;
     display: inline-block;
     color: #fff; 
-    margin: 0 40px;
+    margin: 0 20px;
     transition: all 0.3s;
 }
-.navbar .addCategory:hover{
+.navbar .addCategory:hover,
+.navbar .home:hover
+{
     color: #5390d9; 
 
 }
